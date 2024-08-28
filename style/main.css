@@ -1043,6 +1043,9 @@ img {
 .blogBanner__content img {
   border-radius: 2rem;
   margin-top: 3rem;
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
 }
 .blogBanner__content h3 {
   font-size: 1.8rem;
@@ -1282,7 +1285,7 @@ img {
 }
 
 .homeAbout {
-  background-image: url(../../desilicious/IMG/about.png);
+  background-image: url(../img/about.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1316,16 +1319,18 @@ img {
 }
 .homeMenulist__wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5rem;
+  row-gap: 2rem;
+  max-width: 70%;
+  margin: 0 auto;
 }
-.homeMenulist__food ul {
+.home_food_item ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.homeMenulist__food ul li {
+.home_food_item ul li {
   color: #dd1d01;
   font-size: 1.5rem;
   font-weight: 500;
@@ -1337,6 +1342,7 @@ img {
 .bat {
   padding: 10rem 0;
 }
+
 .bat__wrapper {
   display: flex;
   justify-content: center;
@@ -1447,6 +1453,7 @@ img {
 }
 .homeBlog__card img {
   margin-bottom: 2rem;
+  object-fit: cover;
 }
 .homeBlog__card h4 {
   font-size: 1.5rem;
@@ -1489,9 +1496,11 @@ img {
   padding: 10rem 0;
 }
 .menuList__content {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  
   padding-bottom: 5rem;
 }
 .menuList__content img {
@@ -1514,14 +1523,15 @@ img {
 }
 .menuList__menu {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 22rem;
+  max-width: 75%;
+  width: 100%;
+  margin: 0 auto;
 }
 .menuList__food ul {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .menuList__food ul li {
   color: #dd1d01;
@@ -1704,6 +1714,7 @@ img {
   font-size: clamp(30px, 8vw, 80px);
   text-align: center;
   margin: 5rem 0;
+  text-transform: capitalize;
 }
 
 .food_wrapper {
@@ -1727,4 +1738,11 @@ img {
     object-fit: cover;
     border-radius: 50%;
   }
+}
+
+.productBanner__card img{
+  object-fit: cover;
+  width: 20rem;
+  height: 13rem;
+  border-radius: 50%;
 }

@@ -1,15 +1,44 @@
+<?php 
+
+/**
+ * Template Name: Special menu
+ *  
+*/
+
+
+
+?>
+
+
+
 <?php get_header()?>
+
+<?php
+
+ 
+
+ if(is_page('rice')) {
+    $pagename == "rice";
+    }
+    else if(is_page('chicken')) {
+    $pagename == "chicken"; 
+    }
+    else if(is_page('salad')) {
+    $pagename == "salad"; 
+    }
+?>
+
 <section class="food bg--dark">
     <div class="container">
-        <h1>Rice Meals</h1>
+        <h1><?php echo $pagename; ?></h1>
         <div class="food_wrapper">
 
-        <?php $rice = new WP_Query(array(
-            'post_type' => 'rice',
+        <?php $loop = new WP_Query(array(
+            'post_type' => $pagename,
             'posts_per_page' => -1
         ))?>
 
-        <?php if($rice->have_posts()) : while($rice->have_posts()) : $rice->the_post();?>
+        <?php if($loop->have_posts()) : while($loop->have_posts()) : $loop->the_post();?>
              <div class="food_item">
                 <?php if(has_post_thumbnail()){
                     the_post_thumbnail();
